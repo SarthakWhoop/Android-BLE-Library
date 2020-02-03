@@ -898,7 +898,9 @@ public abstract class BleManager<E extends BleManagerCallbacks> extends TimeoutH
 	}
 
 	public void disconnectGatt(){
-		mBluetoothGatt.disconnect();
+		if(mBluetoothGatt!=null) {
+		    mBluetoothGatt.disconnect();
+		}
 	}
 
 	/**
