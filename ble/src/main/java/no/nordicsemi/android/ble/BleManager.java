@@ -897,12 +897,6 @@ public abstract class BleManager<E extends BleManagerCallbacks> extends TimeoutH
 		return true;
 	}
 
-	public void disconnectGatt(){
-		if(mBluetoothGatt!=null) {
-		    mBluetoothGatt.disconnect();
-		}
-	}
-
 	/**
 	 * Closes and releases resources. This method will be called automatically after
 	 * calling {@link #disconnect()}. When the device disconnected with link loss and
