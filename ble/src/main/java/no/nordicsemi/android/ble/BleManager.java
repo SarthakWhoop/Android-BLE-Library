@@ -2528,7 +2528,9 @@ public abstract class BleManager<E extends BleManagerCallbacks> extends TimeoutH
 					// This time it will set the autoConnect flag to true (gatt.connect() forces
 					// autoConnect true).
 					if (wasConnected && mInitialConnection) {
-						internalConnect(gatt.getDevice(), null);
+						if(isBonded()) {
+							internalConnect(gatt.getDevice(), null);
+						}
 					} else {
 						mInitialConnection = false;
 						nextRequest(false);
